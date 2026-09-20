@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 // comes back with "No products match" for that tag. Verified against the
 // catalog: each of these returns real results.
 const tags = [
-  "Oversized Tees", "Ethnic Kurtis", "Chino Trousers", "Formal Shirts", "Silk Sarees",
+  "Oversized T-Shirt", "Ethnic Kurtis", "Chino Trousers", "Formal Shirts", "Silk Sarees",
   "Sneakers", "Denim Jackets", "Leather Watches", "Statement Bags", "Sunglasses",
 ];
 

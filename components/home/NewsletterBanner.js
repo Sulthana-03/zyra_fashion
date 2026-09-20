@@ -44,19 +44,20 @@ export default function NewsletterBanner() {
             <p className="text-xs text-zyra-gray mt-2">Flat ₹50 off on your first order above ₹500.</p>
           </div>
         ) : (
-          <form onSubmit={submit} className="mt-7 flex max-w-md mx-auto gap-2">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 min-w-0 rounded-full px-5 py-3 text-sm outline-none border border-black/10 bg-white"
-            />
-            <button type="submit" className="btn-primary flex-shrink-0">
-              Get Code
-            </button>
-          </form>
+          <form onSubmit={submit} className="mt-7 flex max-w-md mx-auto flex-col gap-3">
+  <input
+    type="email"
+    required
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email"
+    className="w-full rounded-full px-5 py-3 text-sm outline-none border border-black/10 bg-white"
+  />
+
+  <button type="submit" className="btn-primary w-40">
+    Get Code
+  </button>
+</form>
         )}
       </motion.div>
     </section>

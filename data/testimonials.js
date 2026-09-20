@@ -17,7 +17,7 @@ export const testimonials = [
     text: "Ordered the bomber jacket for a trip and it's easily the best purchase this year. Quality feels premium, not fast-fashion at all.",
   },
   {
-    name: "Sneha Iyer",
+    name: "John",
     role: "Verified Buyer",
     avatar: "https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?auto=format&fit=crop&w=200&q=80",
     rating: 4,
