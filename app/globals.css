@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  color: #171412;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: "Playfair Display", serif;
+}
+
+/* Global overflow-safety net.
+   Every "button/price/dropdown pushed off-screen on a real phone" bug found
+   in this app so far has had the exact same root cause: a flex or grid
+   child's default min-width (and min-height, for column layouts) is "auto"
+   — its own content size — not 0. So even with flex-1/w-full/a grid track,
+   the browser refuses to shrink that child below its content's natural
+   width, and once a row (or a whole grid column, like the 2-column
+   cart/checkout/filter-sidebar layouts below the lg breakpoint) is forced
+   wider than the screen, the excess simply gets clipped off-screen by the
+   overflow-x:hidden above instead of wrapping or scrolling into view.
+   Patching each spot individually kept missing new ones (a grid column is
+   just as vulnerable as a flex row, and there are dozens of flex rows in
+   this app). This resets the default on every direct flex/grid child
+   site-wide, which only lets things shrink when space is actually tight —
+   it changes nothing when there's room to spare — so it can't visually
+   break any row that already fits. */
+.flex > *,
+.grid > * {
+  min-width: 0;
+  min-height: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1eee8;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFC72C;
+  border-radius: 8px;
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #FFC72C;
+  color: #171412;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  transition: all 0.35s ease;
+}
+.btn-primary:hover {
+  background: #171412 !important;
+  color: #FFC72C !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 199, 44, 0.4);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1.5px solid #111111;
+  color: #111111;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  transition: all 0.35s ease;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: #111111;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.section-tag {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #F0A500;
+}
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(17, 17, 17, 0.06);
+}
+
+.zoom-img {
+  overflow: hidden;
+}
+.zoom-img img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.zoom-img:hover img {
+  transform: scale(1.08);
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #f1eee8 25%, #fbf9f4 50%, #f1eee8 75%);
+  background-size: 200% 100%;
+}
