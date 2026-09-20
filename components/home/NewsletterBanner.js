@@ -54,7 +54,7 @@ export default function NewsletterBanner() {
     className="w-full rounded-full px-5 py-3 text-sm outline-none border border-black/10 bg-white"
   />
 
-  <button type="submit" className="btn-primary w-40">
+  <button type="submit" className="btn-primary w-40 mx-auto">
     Get Code
   </button>
 </form>
